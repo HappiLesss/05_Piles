@@ -49,9 +49,10 @@ int main () {
                     std::cout<<"Valeur :";
                     std::cin>>new_value;
                     top(ma_pile,virtual_size) = new_value;
+                    feedback_value = std::to_string(new_value);
                     break;
                 case 5:
-                    feedback_value = (empty(ma_pile,virtual_size)?"La pile est vide.":"La pile n'est pas vide.");
+                    feedback_value = empty(ma_pile,virtual_size)?"La pile est vide.":"La pile n'est pas vide.";
                     break;
                 case 6:
                     std::cout << size(virtual_size) << std::endl;
@@ -65,8 +66,8 @@ int main () {
                 default:
                     break;
             }
-            std::cout << feedback_value << std::endl;
-            affichage_retour(selection-1, feedback_value);
+            std::cin.clear();
+            affichage_retour(selection, feedback_value);
         }
         catch (std::exception& e){
             std::cerr << "\nErreur : " << e.what() << std::endl;
