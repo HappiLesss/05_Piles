@@ -24,7 +24,7 @@ int main () {
         try{
             do{
                 // inputs manager.
-                std::cout<< "\nVotre choix:" ;
+                std::cout<< "\nVotre choixAAAA:" ;
                 std::cin>>selection;
             }
             while ((selection < 0 || selection > 8) && selection);
