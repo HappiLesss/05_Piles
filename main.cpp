@@ -19,7 +19,7 @@ int main () {
     unsigned short selection =0;
 
     // print menu.
-    help();
+    affichage_menu();
     do{
         try{
             do{
@@ -65,6 +65,7 @@ int main () {
                 default:
                     break;
             }
+            std::cout << feedback_value << std::endl;
             affichage_retour(selection-1, feedback_value);
         }
         catch (std::exception& e){

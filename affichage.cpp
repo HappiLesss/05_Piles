@@ -1,12 +1,11 @@
 #include <array>
 #include <iostream>
 #include <string>
-
+#include "affichage.h"
 //
 // Created by maxsc on 18.11.2026.
 //
-
-void affichage_menu() {
+void help() {
     std::cout<<"Ce programme permet de manipuler une pile d'entiers."<<std::endl;
     std::cout<<"1 - Empiler"<<std::endl;
     std::cout<<"2 - Dépiler"<<std::endl;
@@ -19,40 +18,8 @@ void affichage_menu() {
     std::cout<<"0 - Quitter"<<std::endl;
     std::cout<<"Valeur : ";
 }
-int select_options(int selection)
-{
-    switch (selection)
-    {
-        case 0:
-            break;
-        case 1:
-            //ta fonction
-            break;
-        case 2:
-            //ta fonction
-            break;
-        case 3:
-            //ta fonction
-            break;
-        case 4:
-            //ta fonction
-            break;
-        case 5:
-            //ta fonction
-            break;
-        case 6:
-            //ta fonction
-            break;
-        case 7:
-            //ta fonction
-            break;
-        case 8:
-            //ta fonction
-            break;
-    }
-    return selection;
-}
-std::string& affichage_retour (int selection)
+
+void affichage_retour (int selection, const std::string& feedback)
 {
     std::array<std::string,12> options = {
         "Valeur empilée.",
@@ -68,5 +35,5 @@ std::string& affichage_retour (int selection)
         "Sommet -> ",
         "Fond   ->" };
     //return ;
+    std::cout << options[selection] << feedback<< std::endl;
 }
-
