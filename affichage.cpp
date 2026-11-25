@@ -5,7 +5,7 @@
 //
 // Created by maxsc on 18.11.2026.
 //
-void help() {
+void affichage_menu() {
     std::cout<<"Ce programme permet de manipuler une pile d'entiers."<<std::endl;
     std::cout<<"1 - Empiler"<<std::endl;
     std::cout<<"2 - Dépiler"<<std::endl;
@@ -16,24 +16,20 @@ void help() {
     std::cout<<"7 - Vider la pile"<<std::endl;
     std::cout<<"8 - Afficher toute la pile"<<std::endl;
     std::cout<<"0 - Quitter"<<std::endl;
-    std::cout<<"Valeur : ";
 }
 
 void affichage_retour (int selection, const std::string& feedback)
 {
-    std::array<std::string,12> options = {
+    std::array<std::string,13> options = {
+        "",
         "Valeur empilée.",
         "Valeur retirée :",
         "Sommet :",
-        "Valeur de remplacement :",
         "Valeur remplacée." ,
-        "La pile n'est pas vide.",
-        "La pile est vide.",
-        "Sommet / Fond -> ",
-        "Erreur : impossible de dépiler une pile vide.",
+        "",
         "Nombre de valeurs : ",
-        "Sommet -> ",
-        "Fond   ->" };
-    //return ;
+        "",
+        "",
+        ""};
     std::cout << options[selection] << feedback<< std::endl;
 }

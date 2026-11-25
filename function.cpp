@@ -25,7 +25,7 @@ int pop(std::array<int, capacite>& stack, unsigned short& virtual_size) {
         // erase the last element of the stack.
         //std::cout << "Valeur retirée: " << stack.at(virtual_size-1) << std::endl;
         virtual_size--;
-        return stack.at(virtual_size-1);
+        return stack.at(virtual_size);
     }
     else {
         // suicide
