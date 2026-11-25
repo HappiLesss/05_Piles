@@ -5,13 +5,14 @@
 #include <iostream>
 #include <array>
 #include <algorithm>
-#include <exception>
+
 
 void push(const int new_element,std::array<int, capacite>& stack, unsigned short& virtual_size) {
-    // check if the virtual size of stack is < than the max size of stack.
+    //  Check si la taille de notre stack ne dépasse pas celle de notre taille virtuelle
     if (virtual_size<stack.size()) {
-        // push the element.
+        // push le nouvel élément
         stack.at(virtual_size) = new_element;
+        //incrémentation de notre compteur de size
         virtual_size++;
         //std::cout << "Valeur empilée." << std::endl;
         return;

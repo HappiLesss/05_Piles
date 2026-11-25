@@ -6,13 +6,9 @@
 #include <array>
 #include "function.h"
 #include "affichage.h"
-#include "constantes.h"
-#include "function.h"
-#include <array>
-#include <iostream>
-#include <limits>
 
 int main () {
+    //Initialisation de notre taille de
     unsigned short virtual_size= 4;
     std::array <int, capacite> ma_pile = {1,2,3,4,5};
     std::array <int, capacite> ma_pile_backup = ma_pile;
