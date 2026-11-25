@@ -13,23 +13,25 @@ void push(const int new_element,std::array<int, capacite>& stack, unsigned short
         // push the element.
         stack.at(virtual_size) = new_element;
         virtual_size++;
-        std::cout << "Valeur empilée." << std::endl;
+        //std::cout << "Valeur empilée." << std::endl;
         return;
     }
     // we cant push any element.
     throw(std::overflow_error("Impossible d'empiler une pile pleine."));
 }
-void pop(std::array<int, capacite>& stack, unsigned short& virtual_size) {
+int pop(std::array<int, capacite>& stack, unsigned short& virtual_size) {
     // check if the virtual size is not null.
     if (virtual_size > 0) {
         // erase the last element of the stack.
-        std::cout << "Valeur retirée: " << stack.at(virtual_size-1) << std::endl;
+        //std::cout << "Valeur retirée: " << stack.at(virtual_size-1) << std::endl;
         virtual_size--;
+        return stack.at(virtual_size-1);
     }
     else {
         // suicide
         throw(std::underflow_error("Impossible de dépiler une pile vide."));
     }
+    return 0;
 }
 int& top(std::array<int, capacite>& stack, const unsigned short virtual_size) {
     // this method returns the last element of the stack.
@@ -45,7 +47,7 @@ bool empty(const std::array<int, capacite>& stack, unsigned short& virtual_size)
 void clear(const std::array<int, capacite>& stack, unsigned short& virtual_size) {
     // setting the virtual size as 0.
     virtual_size = 0;
-    std::cout << "Pile vidée." << std::endl;
+    //std::cout << "Pile vidée." << std::endl;
 }
 
 unsigned short size(const unsigned virtual_size) {

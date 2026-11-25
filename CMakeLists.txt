@@ -10,4 +10,5 @@ add_executable(05_Piles
         constantes.h
         affichage.h
         gestion_erreurs.cpp
-        gestion_erreurs.h)
+        gestion_erreurs.h
+        affichage.cpp)

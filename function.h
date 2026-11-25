@@ -13,7 +13,7 @@ const unsigned short capacite =5;
 void push(const int new_element, std::array<int, capacite>& stack, unsigned short& virtual_size);
 unsigned short size(const unsigned virtual_size);
 unsigned short get_capactite();
-void pop(std::array<int,capacite >& stack, unsigned short& virtual_size);
+int pop(std::array<int,capacite >& stack, unsigned short& virtual_size);
 
 int& top(std::array<int, capacite>& stack,const unsigned short virtual_size);
 bool empty(const std::array<int, capacite>& stack, unsigned short& virtual_size);
