@@ -67,6 +67,6 @@ std::string& affichage_retour (int selection)
         "Nombre de valeurs : ",
         "Sommet -> ",
         "Fond   ->" };
-    return options&;
+    //return ;
 }
 
