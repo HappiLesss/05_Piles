@@ -2,6 +2,7 @@
 // Created by lordelbardooo on 11/18/26.
 //
 #include "function.h"
+#include <string>
 #include <iostream>
 #include <array>
 #include <algorithm>
