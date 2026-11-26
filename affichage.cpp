@@ -5,6 +5,12 @@
 //
 // Created by maxsc on 18.11.2026.
 //
+void saisie(int& saisie, std::string message, std::array<int,2> range) {
+    do {
+        std::cout <<message;
+        std::cin >> saisie;
+    }while ((saisie < range[0] || saisie > range[1]) && saisie);
+}
 void affichage_menu() {
     std::cout<<"Ce programme permet de manipuler une pile d'entiers."<<std::endl;
     std::cout<<"1 - Empiler"<<std::endl;
@@ -15,7 +21,7 @@ void affichage_menu() {
     std::cout<<"6 - Afficher le nombre de valeurs"<<std::endl;
     std::cout<<"7 - Vider la pile"<<std::endl;
     std::cout<<"8 - Afficher toute la pile"<<std::endl;
-    std::cout<<"0 - Quitter"<<std::endl;
+    std::cout<<"0 - Quitter";
 }
 
 void affichage_retour (int selection, const std::string& feedback)
@@ -23,13 +29,13 @@ void affichage_retour (int selection, const std::string& feedback)
     std::array<std::string,13> options = {
         "",
         "Valeur empilée.",
-        "Valeur retirée :",
-        "Sommet :",
-        "Valeur remplacée." ,
+        "Valeur retirée : ",
+        "Sommet : ",
+        "Valeur remplacée : " ,
         "",
         "Nombre de valeurs : ",
-        "",
+        "Pile vidée.",
         "",
         ""};
-    std::cout << options[selection] << feedback<< std::endl;
+    std::cout << options[selection] << feedback;//<< std::endl;
 }

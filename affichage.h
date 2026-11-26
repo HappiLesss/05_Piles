@@ -7,6 +7,6 @@
 #include <array>
 
 #endif //INC_05_PILES_AFFICHAGE_H
-void help();
+void saisie(int& saisie, std::string message = "text", std::array<int,2> range = {-1,1});
 void affichage_retour(int a, const  std::string& feedback);
 void affichage_menu();
