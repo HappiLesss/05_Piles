@@ -10,15 +10,15 @@
 #ifndef INC_05_PILES_FUNCTION_H
 #define INC_05_PILES_FUNCTION_H
 const unsigned short capacite =5;
-void push(const int new_element, std::array<int, capacite>& stack, unsigned short& virtual_size);
-unsigned short size(const unsigned virtual_size);
+void push(int new_element, std::array<int, capacite>& stack, unsigned short& virtual_size);
+unsigned short size(unsigned virtual_size);
 unsigned short get_capactite();
 int pop(std::array<int,capacite >& stack, unsigned short& virtual_size);
 
-int& top(std::array<int, capacite>& stack,const unsigned short virtual_size);
-bool empty(const std::array<int, capacite>& stack, unsigned short& virtual_size);
-void clear(const std::array<int, capacite>& stack, unsigned short& virtual_size);
+int& top(std::array<int, capacite>& stack,unsigned short virtual_size);
+bool empty(unsigned short& virtual_size);
+void clear(unsigned short& virtual_size);
 
-void print_pile(const std::array<int, capacite>& stack, const unsigned short virtual_size);
+void print_pile(const std::array<int, capacite>& stack,unsigned short virtual_size);
 
 #endif //INC_05_PILES_FUNCTION_H

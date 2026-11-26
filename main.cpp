@@ -13,13 +13,14 @@ int main () {
     std::array <int, capacite> ma_pile = {1,2,3,4,5};
     std::array <int, capacite> ma_pile_backup = ma_pile;
     unsigned short selection =0;
+    bool error = false;
 
     // print menu.
-    help();
+    affichage_menu();
     do{
         try{
             do{
-                // inputs manager.
+                // inputs manager
                 std::cout<< "\nVotre choix:" ;
                 std::cin>>selection;
             }
@@ -47,13 +48,13 @@ int main () {
                     top(ma_pile,virtual_size) = new_value;
                     break;
                 case 5:
-                    feedback_value = (empty(ma_pile,virtual_size)?"La pile est vide.":"La pile n'est pas vide.");
+                    feedback_value = (empty(virtual_size)?"La pile est vide.":"La pile n'est pas vide.");
                     break;
                 case 6:
                     std::cout << size(virtual_size) << std::endl;
                     break;
                 case 7:
-                    clear(ma_pile, virtual_size);
+                    clear(virtual_size);
                     break;
                 case 8:
                     print_pile(ma_pile,virtual_size);
@@ -61,7 +62,7 @@ int main () {
                 default:
                     break;
             }
-            affichage_retour(selection-1, feedback_value);
+            affichage_retour(selection, feedback_value);
         }
         catch (std::exception& e){
             std::cerr << "\nErreur : " << e.what() << std::endl;

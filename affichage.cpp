@@ -17,5 +17,19 @@ void affichage_menu() {
     std::cout<<"8 - Afficher toute la pile"<<std::endl;
     std::cout<<"0 - Quitter"<<std::endl;
 }
-
+void affichage_retour (int selection, const std::string& feedback)
+{
+    std::array<std::string,13> options = {
+        "",
+        "Valeur empilée.",
+        "Valeur retirée :",
+        "Sommet :",
+        "Valeur remplacée." ,
+        "",
+        "Nombre de valeurs : ",
+        "",
+        "",
+        ""};
+    std::cout << options[selection] << feedback<< std::endl;
+}
 
