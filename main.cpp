@@ -5,6 +5,7 @@
 #include <iostream>
 #include <array>
 #include <limits>
+#include <string>
 #include "function.h"
 #include "affichage.h"
 
