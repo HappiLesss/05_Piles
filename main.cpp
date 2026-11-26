@@ -8,6 +8,7 @@
 #include <string>
 #include "function.h"
 #include "affichage.h"
+#include <exception>
 
 int main () {
     // var capacite est defini dans notre function.h

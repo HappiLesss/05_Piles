@@ -6,6 +6,7 @@
 #include <iostream>
 #include <array>
 #include <algorithm>
+#include <exception>
 
 
 void init_array(std::array<int, capacite>& stack) {
