@@ -37,5 +37,5 @@ void affichage_retour (int selection, const std::string& feedback)
         "Pile vidée.",
         "",
         ""};
-    std::cout << options[selection] << feedback;//<< std::endl;
+    std::cout << options[selection] << feedback;
 }
