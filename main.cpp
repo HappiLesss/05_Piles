@@ -6,22 +6,25 @@
 #include <array>
 #include "function.h"
 #include "affichage.h"
+#include "constantes.h"
+#include "function.h"
+#include <array>
+#include <iostream>
+#include <limits>
 
 int main () {
-    //Initialisation de notre taille de
     unsigned short virtual_size= 4;
     std::array <int, capacite> ma_pile = {1,2,3,4,5};
     std::array <int, capacite> ma_pile_backup = ma_pile;
     unsigned short selection =0;
-    bool error = false;
 
     // print menu.
     affichage_menu();
     do{
         try{
             do{
-                // inputs manager
-                std::cout<< "\nVotre choix:" ;
+                // inputs manager.
+                std::cout<< "\nVotre choixAAAA:" ;
                 std::cin>>selection;
             }
             while ((selection < 0 || selection > 8) && selection);
@@ -46,15 +49,16 @@ int main () {
                     std::cout<<"Valeur :";
                     std::cin>>new_value;
                     top(ma_pile,virtual_size) = new_value;
+                    feedback_value = std::to_string(new_value);
                     break;
                 case 5:
-                    feedback_value = (empty(virtual_size)?"La pile est vide.":"La pile n'est pas vide.");
+                    feedback_value = empty(ma_pile,virtual_size)?"La pile est vide.":"La pile n'est pas vide.";
                     break;
                 case 6:
                     std::cout << size(virtual_size) << std::endl;
                     break;
                 case 7:
-                    clear(virtual_size);
+                    clear(ma_pile, virtual_size);
                     break;
                 case 8:
                     print_pile(ma_pile,virtual_size);
@@ -62,6 +66,7 @@ int main () {
                 default:
                     break;
             }
+            std::cin.clear();
             affichage_retour(selection, feedback_value);
         }
         catch (std::exception& e){

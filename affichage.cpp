@@ -4,7 +4,7 @@
 #include "affichage.h"
 //
 // Created by maxsc on 18.11.2026.
-//Fonction pour afficher notre menu de sélection
+//
 void affichage_menu() {
     std::cout<<"Ce programme permet de manipuler une pile d'entiers."<<std::endl;
     std::cout<<"1 - Empiler"<<std::endl;
@@ -17,6 +17,7 @@ void affichage_menu() {
     std::cout<<"8 - Afficher toute la pile"<<std::endl;
     std::cout<<"0 - Quitter"<<std::endl;
 }
+
 void affichage_retour (int selection, const std::string& feedback)
 {
     std::array<std::string,13> options = {
@@ -32,4 +33,3 @@ void affichage_retour (int selection, const std::string& feedback)
         ""};
     std::cout << options[selection] << feedback<< std::endl;
 }
-

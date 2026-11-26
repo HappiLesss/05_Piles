@@ -7,5 +7,8 @@ add_executable(05_Piles
         main.cpp
         function.cpp
         function.h
+        constantes.h
         affichage.h
+        gestion_erreurs.cpp
+        gestion_erreurs.h
         affichage.cpp)

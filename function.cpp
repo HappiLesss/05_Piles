@@ -5,51 +5,53 @@
 #include <iostream>
 #include <array>
 #include <algorithm>
-
+#include <exception>
 
 void push(const int new_element,std::array<int, capacite>& stack, unsigned short& virtual_size) {
-    //  Check si la taille de notre stack ne dépasse pas celle de notre taille virtuelle
+    // check if the virtual size of stack is < than the max size of stack.
     if (virtual_size<stack.size()) {
-        // push le nouvel élément
+        // push the element.
         stack.at(virtual_size) = new_element;
-        //incrémentation de notre compteur de size
         virtual_size++;
+        //std::cout << "Valeur empilée." << std::endl;
         return;
     }
     // we cant push any element.
     throw(std::overflow_error("Impossible d'empiler une pile pleine."));
 }
 int pop(std::array<int, capacite>& stack, unsigned short& virtual_size) {
-    // vérifie que notre taille virtuelle est non nulle
+    // check if the virtual size is not null.
     if (virtual_size > 0) {
         // erase the last element of the stack.
+        //std::cout << "Valeur retirée: " << stack.at(virtual_size-1) << std::endl;
         virtual_size--;
-        //retourne la valeur que nous allons retirer
-        return stack.at(virtual_size-1);
+        return stack.at(virtual_size);
     }
     else {
+        // suicide
         throw(std::underflow_error("Impossible de dépiler une pile vide."));
     }
     return 0;
 }
 int& top(std::array<int, capacite>& stack, const unsigned short virtual_size) {
-    //Retourne le dernier élément de notre stack
+    // this method returns the last element of the stack.
     if (virtual_size > 0) {
         return stack.at(virtual_size-1);
     }
     throw(std::underflow_error("Impossible de consulter le sommer d'une pile vide."));
 }
-bool empty(unsigned short& virtual_size) {
-    // retourne le test pour check si notre valeure est nulle
+bool empty(const std::array<int, capacite>& stack, unsigned short& virtual_size) {
+    // is the virtual size of stack null ?
     return virtual_size;
 }
-void clear(unsigned short& virtual_size) {
+void clear(const std::array<int, capacite>& stack, unsigned short& virtual_size) {
     // setting the virtual size as 0.
     virtual_size = 0;
+    //std::cout << "Pile vidée." << std::endl;
 }
 
 unsigned short size(const unsigned virtual_size) {
-    // retourne la taille virtuelle de notre stack
+    // return the virtual size of the stack.
     return virtual_size;
 }
 
@@ -59,14 +61,14 @@ void print_pile(const std::array<int, capacite>& stack, const unsigned short vir
     unsigned int num_spacing = std::max(text_sommet.length(), text_fond.length());
     std::string spacing = "";
     if (virtual_size == 0) {
-        // Retourne erreur si notre stack est vide
+        // virtual size is null.
         throw(std::underflow_error("Impossible d'afficher une pile vide."));
     }
     if (virtual_size == 1) {
-        // la pille ne contient que un élément
+        // the pile contains only one element.
         text_sommet = "Sommet/Fond ->";
     }
-    // impression de la pille
+    // we be printing that pile !
     for (int i = 0; i < num_spacing; ++i) {
         spacing += " ";
     }
